@@ -1,19 +1,19 @@
 
-apiVersion: argoproj.io/v1alpha1   # API group for ArgoCD resources
-kind: Application                  # Resource type is "Application"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: portfolio            # Name of this ArgoCD application
-  namespace: argocd                # Must be created in the 'argocd' namespace
+  namespace: argocd
 spec:
-  project: portfolio                 # ArgoCD Project (logical grouping of apps)
+  project: portfolio                 # ArgoCD Project
   source:
-    repoURL: https://github.com/JanitChawla/Lineten.git   # Git repo containing manifests
-    targetRevision: main           # Git branch or tag (e.g., main, dev, release-1.0)
-    path: kubernetes  # Path inside repo where manifests live
+    repoURL: https://github.com/JanitChawla/Lineten.git
+    targetRevision: main
+    path: kubernetes
   destination:
-    server: https://kubernetes.default.svc   # Target cluster API
-    namespace: default             # Namespace in which to deploy the app
-  syncPolicy:                      # Defines how ArgoCD syncs the app
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
     automated:                     # Enable auto-sync
-      prune: true                  # Delete resources removed from Git
-      selfHeal: true               # Fix drift if resources are changed manually
+      prune: true
+      selfHeal: true
