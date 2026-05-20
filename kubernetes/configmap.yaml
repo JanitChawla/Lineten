@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+  labels:
+    app.kubernetes.io/name: portfolio
+data:
+  ENV: production
+
