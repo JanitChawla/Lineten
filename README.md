@@ -29,25 +29,15 @@ Nice-to-have items:
 - Docker Compose: `docker-compose.yaml` can run the app locally.
 - Public internet: on EKS, the `LoadBalancer` service would provision an AWS load balancer.
 
-## Local Development
+## Public Demo
 
-Install dependencies:
+The application is currently accessible at:
 
-```bash
-npm install
+```text
+http://3.19.241.71/
 ```
 
-Run the app locally:
-
-```bash
-npm start
-```
-
-Build the production app:
-
-```bash
-npm run build
-```
+The repository also includes Kubernetes, Argo CD, and Terraform EKS manifests to show how the same image can be deployed through a cloud-native workflow.
 
 ## Docker
 
@@ -98,7 +88,9 @@ kubectl get svc portfolio-service
 kubectl get hpa
 ```
 
-For Docker Desktop Kubernetes, the service is configured as `LoadBalancer`, so the app should be available at:
+![Kubernetes resources](images/kubectl.png)
+
+For a local Kubernetes cluster such as Docker Desktop, the service is configured as `LoadBalancer`, so the app should be available at:
 
 ```text
 http://localhost
@@ -156,6 +148,8 @@ Argo CD watches the `kubernetes/` folder on the `main` branch and syncs changes 
 
 The application uses the default Argo CD project to keep the demo self-contained. In a larger setup this could be moved into a dedicated `AppProject` with explicit source repository and destination restrictions.
 
+![Argo CD application](images/argocd.png)
+
 ## GitHub Actions
 
 The workflow is defined in:
@@ -186,6 +180,12 @@ The image repository used by the workflow is:
 ```text
 <DOCKERHUB_USERNAME>/lineten-portfolio
 ```
+
+![GitHub Actions workflow](images/githubaction.png)
+
+The pushed image is visible in Docker Hub:
+
+![Docker Hub image repository](images/dockerhub.png)
 
 ## Terraform EKS
 
