@@ -2,6 +2,8 @@
 
 A React portfolio app packaged with Docker, deployable to Kubernetes, and designed to be managed through a GitOps workflow with Argo CD.
 
+Note: the portfolio content is from an older personal project and has not been updated recently. The focus of this repository is the SRE delivery workflow around the application.
+
 ## What Is Included
 
 - React application served by nginx
