@@ -1,0 +1,18 @@
+.btn{
+    background-color: transparent;
+    height: 50px;
+    width: max-content;
+    font-size: 1.5em;
+    /* border-radius: 5px; */
+    margin-top: 10px;
+    padding: 5px;
+    /* border: none; */
+    /* color: var(--second-color); */
+    text-decoration: underline;
+    font-weight: 600;
+    font-family: "PT Mono", monospace;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
