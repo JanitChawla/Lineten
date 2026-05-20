@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: lineten-portfolio:latest
+          image: janitchawla/lineten-portfolio:7b0f715
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
